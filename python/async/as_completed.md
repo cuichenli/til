@@ -33,7 +33,6 @@ async def main(loop):
     tasks = []
     for num in nums:
         tasks.append(loop.create_task(second_task(num)))
-    gathered_tasks = asyncio.gather(*tasks, return_exceptions=True)
 
     new_tasks = []
     for task in asyncio.as_completed(tasks):
